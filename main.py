@@ -11,7 +11,12 @@
 # Do NOT skip challenges.
 # Every challenge should work before moving to the next one.
 # ==========================================================
-
+#Don't just guess the answer. Plan your steps and think like a strategist.
+print("Azeem X") 
+print("Code, glitch, grow.")
+# Get Ready to build your own text-based adventure game!
+# Get ready to learn Python fundamentals and object-oriented programming!
+# Best of luck, and have fun buddy! 
 
 # ==========================================================
 # PHASE 1 — VARIABLES
@@ -165,7 +170,7 @@ for i in range (1, 11):
 
 # Challenge 11
 # Print every item in an inventory list.
-item = ["sword", "shield", "potion","skills", "luck", "armor", "gold", "health"]
+item = ["sword", "shield", "potion","skills", "luck", "armor", "gold", "health", "care", "Strength"]
 print("Inventory:", item)
 
 
@@ -320,7 +325,6 @@ def inventory():
   return(inventory_list)
 print("Inventory items are:", inventory())
 
-
 # Challenge 23
 # Allow the player to collect items.
 def collect_items(player_gold=1100):
@@ -344,16 +348,50 @@ def inventory_items():
       print(inventory() )
       break
 inventory_items()
+# good approch is
+print("try-again, line by line")
+for x in inventory():
+    print(x)
+    
+
 
 # Challenge 25
 # Remove used items.
-# def remove():
-    
+
+print("now we are going to remove items")
+print("total number of items are:", len(item))
+x = int(input("enter any index number to remove an item :"))
+print("your selected number is:", x)
+print("we are removing this from items(list):",item[x])
+#del inventory[x]
+item.pop(x)  
+# remove_item()
+print(item)
 
 # Challenge 26
 # Create a backpack limit.
-# Maximum:
-# 10 items.
+backpack = item
+x = len(backpack)
+# Maximum:10 items.
+while x < 10:
+ 
+ print("backpack has occopied space of ",x,"items.")
+ y = str(input("add a new item here :"))
+ 
+ if y == "":
+  print("try again")
+ else:
+  backpack.append(y)
+  x = len(backpack)
+  print("item added sucessfully.")
+  print("updated inventory items are :", backpack)
+#   break
+  continue
+ 
+else:
+ print("backpack is full buddy")
+ print(backpack)
+ print(x,"total maximum number of items achieved.")
 
 
 # ==========================================================
