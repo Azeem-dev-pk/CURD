@@ -50,13 +50,14 @@ print ("Hi! Your Name is: ", player_name)
 
 # Challenge 3
 # Create damage and healing variables.
-damage = 20
+player_damage = 10
+enemy_damage = 20
 healing = 30
 
 # Update player_health using arithmetic operators.
 # print(player_health - damage + healing)
 # Print the new health.
-player_health = player_health - damage + healing 
+player_health = player_health - enemy_damage + healing 
 print("Remaining Health of player is :", player_health)
 
 
@@ -64,9 +65,9 @@ print("Remaining Health of player is :", player_health)
 
 # Challenge 4
 # Give the player gold after defeating an enemy.
-enemy = 40
-player_gold += enemy
-print ("players gold :" , player_gold)
+enemy_health = 40
+player_gold += enemy_health
+print ("players gold increased to :" , player_gold)
 # Use += instead of rewriting the variable.
 
 
@@ -147,7 +148,7 @@ else:
 # Give different enemy damage.
 print("Select your difficulty level :")
 x=(input("a)Easy. b)Medium. c)Hard."))
-if x=="a":
+if   x=="a":
      print("You Selected Easy Level.")
 elif x=="b":
      print("You Selected Medium Level.")
@@ -186,14 +187,14 @@ print("Done")
 # Create a while loop that keeps asking:
 # "Attack or Run?"
 while True:
-     x = input("Attack or Run?")
-     if x == "Attack":
+     x = input("attack or run?")
+     if x == "attack":
           print("Player", x)
           continue
-     elif x == "Run":
+     elif x == "run":
           break
      # ai helped me here 
-# Stop only when the player types "Run".
+# Stop only when the player types "run".
 
 
 # Challenge 14
@@ -213,10 +214,10 @@ print("You are Healed", player_health,"% successfully ")
 # Create a battle loop.
 input("Press enter to Start Battle: ")
 # While enemy health > 0:
-print("Enemies Curent health is ", enemy)
+print("Enemies Curent health is ",enemy_health)
 print("The Battle Begins")
 x = 0
-while enemy > 0:
+while enemy_health > 0:
       
      #  print(x)
       if x<5:
@@ -224,11 +225,14 @@ while enemy > 0:
           print("Round no.",x)
 #     attack enemy
       input("Press enter to Damage Enemy: ")
-      enemy=enemy - damage
-      print("Enemy health left is ",enemy)
+      enemy_health =enemy_health - player_damage
+      print("Enemy health left is ",enemy_health)
 #     enemy attacks back
-      print("Now Enemy Attacks back")
-      player_health = player_health-damage
+      if enemy_health > 0:
+       print("Now Enemy Attacks back")
+       player_health = player_health-enemy_damage
+      else:
+        print("Enemy has 0 health.")  
 # Print health after every turn.
       print("Remaining Player Health is:",player_health)
       continue
@@ -255,7 +259,7 @@ greet_player()
 #
 # attack()
 def attack():
-     print("Attack gives",damage,"damage to enemy")
+     print("Attack gives",player_damage,"damage to enemy")
 # It returns damage.
 attack()
 
@@ -266,7 +270,7 @@ attack()
 # heal(current_health)
 
 def heal(player_health=50):
-     print("players curent health is:", player_health)
+     print("players health before healing is:",player_health)
    # Return updated health.
      player_health += healing
      return(player_health)
@@ -286,10 +290,10 @@ def battle(player_health=80, enemy_health=60):
      print("Round no.",x)
      print("enemy health is:", enemy_health)
      input("Press Enter to attack enemy")
-     enemy_health-=damage
+     enemy_health-=player_damage
      print("enemy health left:", enemy_health)
      print("ENEMY ATTACKS BACK")
-     player_health-=enemy
+     player_health-=enemy_damage
      print("player health is", player_health)
 
      return(player_health, enemy_health)
@@ -347,9 +351,9 @@ def inventory_items():
      #  print("786")
       print(inventory() )
       break
-inventory_items()
+# inventory_items() # call function for direct output.
 # good approch is
-print("try-again, line by line")
+# print("try-again, line by line")
 for x in inventory():
     print(x)
     
@@ -360,7 +364,7 @@ for x in inventory():
 
 print("now we are going to remove items")
 print("total number of items are:", len(item))
-x = int(input("enter any index number to remove an item :"))
+x = int(input("enter any index number to remove an item (0 ~ 9):"))
 print("your selected number is:", x)
 print("we are removing this from items(list):",item[x])
 #del inventory[x]
@@ -400,23 +404,67 @@ else:
 
 # Challenge 27
 # Store player stats inside a dictionary.
-
-
 # Example:
-#
 # {
 #     "health":100,
 #     "gold":20,
 #     "level":1
 # }
+player_dict = {
+    "Player health":player_health,
+    "Player gold":player_gold,
+    "Player level":player_level,
+    "Player damage": player_damage
+}
+print("player_dict:",player_dict)
 
 
+enemy_name="jack"
 # Challenge 28
 # Store enemy information in another dictionary.
-
+enemy_dict = {
+    "Enemy Name": enemy_name,
+    "Enemy Health": enemy_health,
+    "Enemy Damage": enemy_damage,
+    "Enemy of Level": player_level
+}
+print("enemy_dict:",enemy_dict)
 
 # Challenge 29
 # Create multiple enemies using a list of dictionaries.
+enemies = [ 
+      {0:"Heihachi Mishima", "Enemy Health":20, "Enemy Damage": enemy_damage, "Enemy of Level": player_level },
+      {1:"Kazuya Mishima", "Enemy Health":20, "Enemy Damage": enemy_damage, "Enemy of Level": player_level },
+      {2:"Akuma", "Enemy Health":20, "Enemy Damage": enemy_damage, "Enemy of Level": player_level }, 
+      {3:"Jin", "Enemy Health":20, "Enemy Damage": enemy_damage, "Enemy of Level": player_level }, 
+      {4:"Devil Jin", "Enemy Health":20, "Enemy Damage": enemy_damage, "Enemy of Level": player_level }
+]
+for x in enemies:
+ print(x)
+
+# TOPIC: NESTED DICTIONARY
+# enemies_dic = {
+#     "enemy_1":{
+#     "Enemy Name": enemy_name,
+#     "Enemy Health": enemy_health,
+#     "Enemy Damage": enemy_damage,
+#     "Enemy of Level": player_level
+#     },
+#     "enemy_2":{
+#     "Enemy Name": enemy_name,
+#     "Enemy Health": enemy_health,
+#     "Enemy Damage": enemy_damage,
+#     "Enemy of Level": player_level
+#     },
+#     "enemy_3":{
+#     "Enemy Name": enemy_name,
+#     "Enemy Health": enemy_health,
+#     "Enemy Damage": enemy_damage,
+#     "Enemy of Level": player_level
+#     },
+# }
+# print(enemies_dic)
+
 
 
 # Challenge 30
