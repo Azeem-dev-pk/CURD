@@ -432,14 +432,14 @@ print("enemy_dict:",enemy_dict)
 
 # Challenge 29
 # Create multiple enemies using a list of dictionaries.
-enemies = [ 
-      {0:"Heihachi Mishima", "Enemy Health":20, "Enemy Damage": enemy_damage, "Enemy of Level": player_level },
-      {1:"Kazuya Mishima", "Enemy Health":20, "Enemy Damage": enemy_damage, "Enemy of Level": player_level },
-      {2:"Akuma", "Enemy Health":20, "Enemy Damage": enemy_damage, "Enemy of Level": player_level }, 
-      {3:"Jin", "Enemy Health":20, "Enemy Damage": enemy_damage, "Enemy of Level": player_level }, 
-      {4:"Devil Jin", "Enemy Health":20, "Enemy Damage": enemy_damage, "Enemy of Level": player_level }
+enemies_list = [ 
+      {1:"Enemy_1", "name":"Heihachi Mishima", "Enemy Health":20, "Enemy Damage": enemy_damage, "Enemy of Level": player_level },
+      {2:"Enemy_2", "name":"Kazuya Mishima", "Enemy Health":20, "Enemy Damage": enemy_damage, "Enemy of Level": player_level },
+      {3:"Enemy_3", "name":"Akuma", "Enemy Health":20, "Enemy Damage": enemy_damage, "Enemy of Level": player_level }, 
+      {4:"Enemy_4", "name":"Jin", "Enemy Health":20, "Enemy Damage": enemy_damage, "Enemy of Level": player_level }, 
+      {5:"Enemy_5", "name":"Devil Jin", "Enemy Health":20, "Enemy Damage": enemy_damage, "Enemy of Level": player_level }
 ]
-for x in enemies:
+for x in enemies_list:
  print(x)
 
 # TOPIC: NESTED DICTIONARY
@@ -469,6 +469,56 @@ for x in enemies:
 
 # Challenge 30
 # Search for a specific enemy by name.
+
+# step no. 1: i'm finding also printing names
+x=-1
+while x<5:
+    # print(x)
+    x+=1
+    # print(x)
+    # print("hi buddy!!", enemies_list[x]["name"])
+    enemy_names = enemies_list[x]["name"]
+    print("Hello!", enemy_names)
+    if x < 4:
+     continue 
+    elif x==4:
+        print("list ends")
+        break
+
+#now start implementing it.
+ 
+name_found = False  # flag variable to check if name is found or not
+x = input("Search Full Name of Enemy Here by typing:")
+print("Your intered name is:",x)
+index = -1
+while index < 4:
+    index += 1
+    # print(index)
+    enemy_name = enemies_list[index]["name"]
+    # print (enemy_name)
+    # print (x)
+    if x == enemy_name:
+        print("We found ",enemy_name)
+        enemy_index = enemies_list[index][index+1]
+        print ("Title of enemy is:",enemy_index)
+        enemy_health = enemies_list[index]["Enemy Health"]
+        print ("Enemy Health is:",enemy_health)
+        enemy_damage = enemies_list[index]["Enemy Damage"]
+        print ("Enemy Damage is:",enemy_damage)
+        enemy_level = enemies_list[index]["Enemy of Level"]
+        print ("Enemy level for Player is",enemy_level)
+        name_found = True
+        break
+    
+if name_found == False :
+    print("Data is not Found in list, so")
+    print("Retry Next time with these names;")
+    print(enemies_list[0]["name"])
+    print(enemies_list[1]["name"])
+    print(enemies_list[2]["name"])
+    print(enemies_list[3]["name"])
+    print(enemies_list[4]["name"])
+        
 
 
 # ==========================================================
