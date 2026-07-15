@@ -527,12 +527,23 @@ if name_found == False :
 
 # Challenge 31
 # Create a Player class.
-#
-# Attributes:
-# name
-# health
-# gold
-# level
+# this is a wrong way to create class. See below, Challenge 32 for correct way to create class with methods.
+#   Attributes:
+class player_attributes : 
+
+    # name
+    name = str("player_1")
+    # health
+    health = int(79)
+    # gold
+    gold = int(405)
+    # level
+    level = int(3)
+print(player_attributes.name)
+
+
+
+
 
 
 # Challenge 32
