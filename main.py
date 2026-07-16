@@ -527,7 +527,7 @@ if name_found == False :
 
 # Challenge 31
 # Create a Player class.
-# this is a wrong way to create class. See below, Challenge 32 for correct way to create class with methods.
+# ...............................................this is a wrong way to create class. See below, Challenge 32 for correct way to create class with methods.
 #   Attributes:
 class player_attributes : 
 
@@ -548,22 +548,86 @@ print(player_attributes.name)
 
 # Challenge 32
 # Add methods:
-#
+
+class Player: #class name should be capitalized.
+    
+ # Note: The following line is not correct in Python. You cannot define a variable like this outside of methods in a class. It should be defined inside the __init__ method or as a class variable.
+    player_health = 49
+
+# this is the correct way to define attributes in a class using the __init__ method.     
+    def __init__(self, damage, heals, level, kills, survival, wins):
+        # Initialize attributes
+        self.damage = damage
+        self.heals = heals
+        self.level = level
+        self.kills = kills
+        self.survival = survival
+        self.wins = wins
+        # Initialize player health
+        self.player_health = 49
+                       
 # attack()
+    def attack(self):
+        # Simulate an attack on an enemy.
+        print("Player is Attacking to Enemy. The damage it gives:", self.damage )
+        # here you can implement logic to reduce enemy health based on self.damage
+        self.player_health -= self.damage
+        print("Player health after attack:", self.player_health)
+
 # heal()
+    def heal(self):
+        # Simulate healing the player.
+        print("Player is Healing now.")
+        # here you can implement logic to increase player health based on self.heals
+        self.player_health += self.heals
+        print("player health is :", self.player_health)
+
 # show_stats()
+    def show_stats(self):
+        # Display the player's stats.
+        print("Stats of player are:" )
+        # print all the attributes of the player
+        print(self.damage)
+        print(self.heals)
+        print(self.level)
+        print(self.kills)
+        print(self.survival)
+        print(self.wins)
+        
+
+
+# here we are creating an instance of the Player class with specific attributes.
+p1 = Player(20, 30, 2, 23, 45, 13)
+# here we are calling the methods on the instance
+print(p1.attack())
+print(p1.heal())
+print(p1.show_stats())
+# now you can create multiple instances of the Player class with different attributes to represent different players in the game...
+
 
 
 # Challenge 33
 # Create an Enemy class.
 
+class Enemy:
+    
+    def __init__(self, name, health, damage):
+        self.name = name
+        self.health = health
+        self.damage = damage
+
 
 # Challenge 34
 # Create several enemy objects.
+e1 = Enemy("Jack-Alpha", 70, 5)
+e2 = Enemy("Mishima", 30, 15)
+e3 = Enemy("Rogue G", 45, 10)
+e4 = Enemy("Tekken Force", 50, 5)
 
 
 # Challenge 35
 # Make Player fight Enemy objects.
+
 
 
 # Challenge 36
