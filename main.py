@@ -616,7 +616,6 @@ class Enemy:
         self.health = health
         self.damage = damage
 
-
 # Challenge 34
 # Create several enemy objects.
 e1 = Enemy("Jack-Alpha", 70, 5)
@@ -628,12 +627,58 @@ e4 = Enemy("Tekken Force", 50, 5)
 
 # Challenge 35
 # Make Player fight Enemy objects.
+# test.py
+
+# Challenge 35
+# Make Player fight Enemy objects.
+
+class Fight:
+    @staticmethod
+    def start():
+        print("Battle Begins..")
+    @staticmethod
+    def stop():
+        print("Battle ended..")
+        
+class Player(Fight): #inheritence 
+    def __init__(self, name, damage):
+     self.name = name
+     self.damage = damage   
+player1 = Player("Ash", 20)   
+
+Fight.start()
+
+class Enemy(Fight): #inheritence 
+    def __init__(self, name, damage):
+     self.name = name
+     self.damage = damage  
+enemy1 = Enemy("Mishima", 30) 
+enemy2 = Enemy("Rogue", 25)  
+enemy3 = Enemy("Alpha",15)  
+
+print("Round no. 1")
+print(player1.name, "is Attacking Now.")
+print( "it gives ",player1.damage, "damage")
+print("Now Enemy",enemy1.name,"attacks back")
+print("It gives",enemy1.damage, "damage to player.")
+
+print("Round no. 2")
+print(player1.name, "is Attacking Now.")
+print( "it gives ",player1.damage, "damage")  
+print("Now Enemy",enemy2.name,"attacks back")
+print("It gives",enemy2.damage, "damage to player.")
+
+print("Round no. 3")
+print(player1.name, "is Attacking Now.")
+print( "it gives ",player1.damage, "damage")  
+print("Now Enemy",enemy3.name,"attacks back")
+print("It gives",enemy3.damage, "damage to player.")
+
+Fight.stop()
 
 
 
-# Challenge 36
-# Add experience points.
-# Player levels up after enough XP.
+
 
 
 # ==========================================================
