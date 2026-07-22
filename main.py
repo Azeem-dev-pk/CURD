@@ -678,8 +678,10 @@ Fight.stop()
 
 
 
-
-
+# Challenge 36
+# Add experience points.
+# Player levels up after enough XP.
+# ...........................i implemented this in test.py file, please check it out.
 
 # ==========================================================
 # PHASE 8 — ADVANCED CLASSES
@@ -687,14 +689,20 @@ Fight.stop()
 
 # Challenge 37
 # Create a Weapon class.
+# ...........................i implemented this in test.py file, please check it out.
+
 
 
 # Challenge 38
 # Player can equip different weapons.
+# ...........................i implemented this in test.py file, please check it out.
+
 
 
 # Challenge 39
 # Weapon changes attack damage.
+# ...........................i implemented this in test.py file, please check it out.
+
 
 
 # Challenge 40
@@ -704,6 +712,8 @@ Fight.stop()
 # Potion
 # Shield
 # Scroll
+# ...........................i implemented this in test.py file, please check it out.
+
 
 
 # Challenge 41
@@ -716,6 +726,8 @@ Fight.stop()
 # Potion
 # Weapon
 # Armor
+# ...........................i'll implement this in test.py file, please check it out.
+
 
 
 # ==========================================================
