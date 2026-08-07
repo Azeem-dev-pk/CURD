@@ -728,7 +728,8 @@ Fight.stop()
 # Armor
 # ...........................i'll implement this in test.py file, please check it out.
 
-
+# > i was not avalible in previous days; now starting where i left... 
+# 7th August,2026
 
 # ==========================================================
 # PHASE 9 — GAME WORLD
