@@ -31,36 +31,48 @@ class Player:
 p1 = Player("Ash", 0, 50, 1)      
 print("Name:",p1.name,"| Level:",p1.level, "| XP:",p1.xp, "| Wins:",p1.wins, )
 
-# Challenge 37. Create a Weapon class.
-# class Weapon:
-#     def __init__(self, name, damage):
-#         self.name = name
-#         self.damage = damage
-# w1 = Weapon("Knife", 5)
-# w2 = Weapon("Sword", 10)///////////// comented bcz > it is recreated in inheritance.
-# w3 = Weapon("Dagger", 15)
-# w4 = Weapon("Shotgun", 20)
+# Challenge 46. Add NPC characters.
+class Npcs(Player):
+   def __init__(self, name, level):
+      super().__init__(name, level, xp=0, wins=0)
+npc1 = Npcs("Mr.Victor", 3)
+npc2 = Npcs("Pikachu", 5)
+npc3 = Npcs("Serena", 2)
+npc4 = Npcs("Leo", 6)
 
+# Challenge 47:  NPCs can give quests.
+def quests():
+   print("Move Around in this High End Graphic Game Map.")
+   print(f"|a)Do you want to visit: {npc1.name} ")
+   print(f"|b)Do you want to visit: {npc2.name} ")
+   print(f"|c)Do you want to visit: {npc3.name} ")
+   print(f"|d)Do you want to visit: {npc4.name} ")
+   Npc = input("Choose a weapon to equip (a/b/c/d): ")
+   if Npc == "a":
+    # player_damage += w1.damage
+    print(f"You have visited {npc1.name}. Your Quest is to...")
+   elif Npc == "b":
+    # player_damage += w2.damage
+    print(f"You have visited {npc2.name}. Your Quest is to....")
+   elif Npc == "c":
+    # player_damage += w3.damage
+    print(f"You have visited {npc3.name}. Your Quest is to...")
+   elif Npc == "d":
+    # player_damage += w4.damage
+    print(f"You have equipped {npc4.name}. Your Quest is to...") 
+    
+
+
+# Challenge 37. Create a Weapon class.
+# class Weapon://///////// comented bcz > it is recreated in inheritance.
 # Challenge 40. Create an Item class.
 # class Item ():
-#    def __init__(self, name, type, value, effect):
-#       self.name = name # name of items
-#       self.type = type # Gear, Consumable, weapon
-#       self.value = value # (cost of item)
-#       self.effect = effect # heal, damage, protect (quantity)
-# item1 = Item("Potion", "Consumable", 100, 25)
-# item2 = Item("Armor", "Gear", 200, 30)
-# item3 = Item("Elixir", "Consumable", 300, 50)
-# item4 = Item("Shield", "Gear", 400, 40 )
-# item5 = Item("Knife", "Weapon", 400, 50 )
-# .......
 # i commented it bcz .. we recreated it in challenge 41.....
 
 # Challenge 41. Use inheritance.  Base class: Item,  Child classes: Potion, Weapon, Armor
 class Item ():
    def __init__(self, name,):
       self.name = name # name of items
-      
 # 1.Potion
 class Potion(Item):
    def __init__(self,name, cost,  heal ):
@@ -80,8 +92,8 @@ class Armor(Item):
          self.cost = cost
          self.protect = protect
 # potion         
-p1 = Potion("Healing Potion", 200, 50)
-p2 = Potion("Elixir", 300, 50)
+po1 = Potion("Healing Potion", 200, 50)
+po2 = Potion("Elixir", 300, 50)
 # weapon colection
 w1 = Weapon("Knife", 400, 50)
 w2 = Weapon("Sword", 500, 100)
@@ -91,8 +103,39 @@ w4 = Weapon("Shotgun", 700, 200)
 a1 = Armor("helmet", 100, 30)
 a2 = Armor("shield", 200, 50)
 
+# Challenge 42: Create multiple locations.
+class Locations():
+   def __init__(self, name="Default", x_axis=0, y_axis=0):
+      self.name = name
+      self.x_axis = x_axis
+      self.y_axis = y_axis
+l1 = Locations("East", 1, 0) # when X increases
+l2 = Locations("West", -1, 0) # when X decreases
+l3 = Locations("North", 0, -1)  # when y increases
+l4 = Locations("South", 0, 1) # when y decreases
 
-      
+# Challenge 45 :add treasure chests.
+def treasure():
+   global player_gold
+   player_gold += increase_gold
+   print("You got", increase_gold, "gold coins from Treasure chest.")
+
+# Challenge 43. Allow player movement: north, south, east, west
+def right():
+   print("Player moves",l1.name, l1.x_axis, l1.y_axis)
+def left():
+   print("Player moves",l2.name, l2.x_axis, l2.y_axis)
+def up():
+   print("Player moves",l3.name, l3.x_axis, l3.y_axis)
+def down():
+   print("Player moves",l4.name, l4.x_axis, l4.y_axis)
+
+# Challenge 45 :add treasure chests.
+input("Press Enter to signIn")
+treasure()
+print("Hi", p1.name)      
+
+quests()
 
 # Challenge 38 is Player can equip different weapons.
 print("Available weapons are:")
@@ -135,7 +178,6 @@ def inc_gold():
      player_gold += increase_gold
      print(f"Gold received after defeating enemy: {player_gold}")
 
-
 # after fight xp increse function calls 
 def inc_xp():
     while player_health > 0:
@@ -160,8 +202,6 @@ def level_up():
         print(f"XP Balance reset: {p1.xp}")
     else:
         print("Still needs", levelup_xp_req(),"for levelup")  
-
-
 
 # function which calls Fight
 def fight():
@@ -196,6 +236,7 @@ def fight():
       level_up()
           
 
+      
 
 # how much XP is needed to level up? Let's say 100 XP is needed to level up.
 
@@ -203,6 +244,9 @@ def fight():
 fight()
 # inc_gold()
 # 
-# 
+print("Name:",npc1.name,"| Level:",npc1.level, "| XP:",npc1.xp, "| Wins:",npc1.wins, )
 
-# print(x)
+# print(l1.name, l1.x_axis, l1.y_axis)
+# print(l1.name)
+
+right()
