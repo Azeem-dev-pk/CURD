@@ -32,28 +32,66 @@ p1 = Player("Ash", 0, 50, 1)
 print("Name:",p1.name,"| Level:",p1.level, "| XP:",p1.xp, "| Wins:",p1.wins, )
 
 # Challenge 37. Create a Weapon class.
-class Weapon:
-    def __init__(self, name, damage):
-        self.name = name
-        self.damage = damage
-w1 = Weapon("Knife", 5)
-w2 = Weapon("Sword", 10)
-w3 = Weapon("Dagger", 15)
-w4 = Weapon("Shotgun", 20)
+# class Weapon:
+#     def __init__(self, name, damage):
+#         self.name = name
+#         self.damage = damage
+# w1 = Weapon("Knife", 5)
+# w2 = Weapon("Sword", 10)///////////// comented bcz > it is recreated in inheritance.
+# w3 = Weapon("Dagger", 15)
+# w4 = Weapon("Shotgun", 20)
 
 # Challenge 40. Create an Item class.
-class Item ():
-   def __init__(self, name, type, value, effect):
-      self.name = name # name of items
-      self.type = type # Gear, Consumable 
-      self.value = value # (cost of item)
-      self.effect = effect # heal, damage, protect (quantity)
-item1 = Item("Potion", "Consumable", 100, 25)
-item2 = Item("Armor", "Gear", 200, 50)
-item3 = Item("Elixir", "Consumable", 300, 50)
-item4 = Item("Shield", "Gear", 400, 100 )
+# class Item ():
+#    def __init__(self, name, type, value, effect):
+#       self.name = name # name of items
+#       self.type = type # Gear, Consumable, weapon
+#       self.value = value # (cost of item)
+#       self.effect = effect # heal, damage, protect (quantity)
+# item1 = Item("Potion", "Consumable", 100, 25)
+# item2 = Item("Armor", "Gear", 200, 30)
+# item3 = Item("Elixir", "Consumable", 300, 50)
+# item4 = Item("Shield", "Gear", 400, 40 )
+# item5 = Item("Knife", "Weapon", 400, 50 )
+# .......
+# i commented it bcz .. we recreated it in challenge 41.....
 
 # Challenge 41. Use inheritance.  Base class: Item,  Child classes: Potion, Weapon, Armor
+class Item ():
+   def __init__(self, name,):
+      self.name = name # name of items
+      
+# 1.Potion
+class Potion(Item):
+   def __init__(self,name, cost,  heal ):
+      self.name = name 
+      self.cost = cost
+      self.heal = heal
+# 2.Weapon
+class Weapon(Item):
+   def __init__(self, name, cost,  damage ):
+         self.name = name 
+         self.cost = cost
+         self.damage = damage
+# 3.Armor
+class Armor(Item):
+   def __init__(self, name, cost,  protect ):
+         self.name = name 
+         self.cost = cost
+         self.protect = protect
+# potion         
+p1 = Potion("Healing Potion", 200, 50)
+p2 = Potion("Elixir", 300, 50)
+# weapon colection
+w1 = Weapon("Knife", 400, 50)
+w2 = Weapon("Sword", 500, 100)
+w3 = Weapon("Dagger", 600, 150)
+w4 = Weapon("Shotgun", 700, 200)
+# armor colection
+a1 = Armor("helmet", 100, 30)
+a2 = Armor("shield", 200, 50)
+
+
       
 
 # Challenge 38 is Player can equip different weapons.
@@ -104,7 +142,7 @@ def inc_xp():
      fight_won = True
      if fight_won:
       p1.xp += increase_xp
-      print("XP increased after defeating enemy is 100, Total:",p1.xp)
+      print("XP increased after defeating enemy is 50, Total:",p1.xp)
       break
     else:
      print("You lose! Try Again next time.")
@@ -157,7 +195,6 @@ def fight():
       levelup_xp_req()
       level_up()
           
-
 
 
 # how much XP is needed to level up? Let's say 100 XP is needed to level up.
