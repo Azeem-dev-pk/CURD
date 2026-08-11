@@ -114,6 +114,18 @@ l2 = Locations("West", -1, 0) # when X decreases
 l3 = Locations("North", 0, -1)  # when y increases
 l4 = Locations("South", 0, 1) # when y decreases
 
+# Challenge 48 -> Create a game menu: Start, Load, Exit
+class Menu():
+   # >> still errors here 
+   def start():
+      input("Press enter to Start the Game.")
+      print("THE GAME BEGINS NOW")
+   def load():
+         print("Loading...")
+   def exit():
+         input("Press enter to Exit the Game.")
+         print("THE GAME Exit")      
+
 # Challenge 45 :add treasure chests.
 def treasure():
    global player_gold
@@ -130,7 +142,9 @@ def up():
 def down():
    print("Player moves",l4.name, l4.x_axis, l4.y_axis)
 
-# Challenge 45 :add treasure chests.
+game_menu = Menu()
+print(game_menu. start())
+
 input("Press Enter to signIn")
 treasure()
 print("Hi", p1.name)      
