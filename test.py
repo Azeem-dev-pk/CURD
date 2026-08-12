@@ -1,3 +1,6 @@
+import random
+import json
+
 # Challenge 36
 # 36-1. Add experience points.
 
@@ -5,6 +8,7 @@
 player_health = 100
 player_gold = 500 
 player_damage = 20
+inventory_list = ["sword", "shield", "heal","skill", "luck", "armor", "gold", "health"]
 
 # enemy default stats
 enemy_health = 100
@@ -114,17 +118,18 @@ l2 = Locations("West", -1, 0) # when X decreases
 l3 = Locations("North", 0, -1)  # when y increases
 l4 = Locations("South", 0, 1) # when y decreases
 
-# Challenge 48 -> Create a game menu: Start, Load, Exit
-class Menu():
-   # >> still errors here 
-   def start():
-      input("Press enter to Start the Game.")
-      print("THE GAME BEGINS NOW")
-   def load():
-         print("Loading...")
-   def exit():
-         input("Press enter to Exit the Game.")
-         print("THE GAME Exit")      
+
+# Challenge 44: Randomly spawn enemies.
+class Enemy:
+    def __init__(self, name, damage):
+     self.name = name
+     self.damage = damage  
+enemy1 = Enemy("Mishima", 30) 
+enemy2 = Enemy("Rogue", 25)  
+enemy3 = Enemy("Alpha",15)  
+enemies = [enemy1, enemy2, enemy3]
+spawn_enemy = random.choice(enemies)
+print(f"Spawned: {spawn_enemy.name} with {spawn_enemy.damage} damage")
 
 # Challenge 45 :add treasure chests.
 def treasure():
@@ -142,8 +147,24 @@ def up():
 def down():
    print("Player moves",l4.name, l4.x_axis, l4.y_axis)
 
-game_menu = Menu()
-print(game_menu. start())
+
+
+
+# Challenge 48 -> Create a game menu: Start, Load, Exit
+print('Game Menu')
+print('1. Start a new game')
+print('2. Load a game')
+print('3. Exit')
+menuoption = input("Type in the number of the menu option you would like;")
+if menuoption == '1':
+   print('The Start of the Game')
+elif menuoption == '2':
+   print('Load a Game')
+elif menuoption == '3':
+   print('Exits Game !')
+else:
+   print("That isn't a valid option")
+
 
 input("Press Enter to signIn")
 treasure()
@@ -255,12 +276,51 @@ def fight():
 # how much XP is needed to level up? Let's say 100 XP is needed to level up.
 
 
-fight()
+# fight()
 # inc_gold()
 # 
-print("Name:",npc1.name,"| Level:",npc1.level, "| XP:",npc1.xp, "| Wins:",npc1.wins, )
-
+# print("Name:",npc1.name,"| Level:",npc1.level, "| XP:",npc1.xp, "| Wins:",npc1.wins, )
 # print(l1.name, l1.x_axis, l1.y_axis)
 # print(l1.name)
 
-right()
+# right()
+
+
+# Challenge 49: Save player data to a file.
+# 1. Define your player data in a dictionary
+player_data = {
+    "username": p1.name,
+    "level": p1.level,
+    "gold": player_gold,
+    "damage": player_damage,
+    "health": player_health,
+    "inventory": inventory_list
+}
+# 2. Open a new file in write mode ('w') and save the data
+with open("save_game.json", "w") as file:
+    json.dump(player_data, file, indent=4)
+
+print("Player data saved successfully!")
+
+# Challenge 50: Load saved data.
+# Open and load the JSON file
+with open("save_game.json", "r") as file:
+    data = json.load(file)
+
+# The data is now a standard Python dictionary or list
+print(data)
+
+# Challenge 51: Add a boss battle.
+print("GET READY FOR THE BOSS BATTLE")
+input("Press Enter to attack")
+enemy_health -= player_damage
+
+# Enemy()
+# 1. Print a combat message
+print(f"{spawn_enemy.name} attacks you!")
+
+# 2. Use the damage in a calculation
+player_health = 100
+player_health -= spawn_enemy.damage
+print(f"You took {spawn_enemy.damage} damage! Health is now {player_health}.")
+

@@ -1,0 +1,17 @@
+{
+    "username": "Ash",
+    "level": 0,
+    "gold": 600,
+    "damage": 20,
+    "health": 100,
+    "inventory": [
+        "sword",
+        "shield",
+        "heal",
+        "skill",
+        "luck",
+        "armor",
+        "gold",
+        "health"
+    ]
+}
