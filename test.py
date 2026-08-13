@@ -1,3 +1,4 @@
+# Challenge 53: Refactor your entire project.
 import random
 import json
 
@@ -148,6 +149,15 @@ def down():
    print("Player moves",l4.name, l4.x_axis, l4.y_axis)
 
 
+# # Challenge 52: Add victory and defeat endings.
+def matchEvents():
+   if player_health > enemy_health:
+      print(f"Victory! Enemy Defeated.")
+   elif player_health < enemy_health:
+      print(f"The End! Player Defeated, Try Next Time")
+   else: print("Draw Fight")
+
+    
 
 
 # Challenge 48 -> Create a game menu: Start, Load, Exit
@@ -303,10 +313,9 @@ with open("save_game.json", "w") as file:
 print("Player data saved successfully!")
 
 # Challenge 50: Load saved data.
-# Open and load the JSON file
+# Open and load the JSON file....syntax
 with open("save_game.json", "r") as file:
     data = json.load(file)
-
 # The data is now a standard Python dictionary or list
 print(data)
 
@@ -315,12 +324,10 @@ print("GET READY FOR THE BOSS BATTLE")
 input("Press Enter to attack")
 enemy_health -= player_damage
 
-# Enemy()
-# 1. Print a combat message
 print(f"{spawn_enemy.name} attacks you!")
 
-# 2. Use the damage in a calculation
-player_health = 100
 player_health -= spawn_enemy.damage
 print(f"You took {spawn_enemy.damage} damage! Health is now {player_health}.")
 
+
+print(x)
