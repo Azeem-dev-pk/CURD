@@ -2,8 +2,8 @@
     "username": "Ash",
     "level": 0,
     "gold": 600,
-    "damage": 20,
-    "health": 100,
+    "damage": 70,
+    "health": 85,
     "inventory": [
         "sword",
         "shield",

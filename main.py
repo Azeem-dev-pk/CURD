@@ -1,4 +1,4 @@
-# ==========================================================
+# ============================azeem=========================
 # PYTHON LEARNING PROJECT
 # Project Title: Build Your Own Text-Based Adventure Game
 #
@@ -10,7 +10,7 @@
 # Rule:
 # Do NOT skip challenges.
 # Every challenge should work before moving to the next one.
-# ==========================================================
+# ============================azeem=========================
 #Don't just guess the answer. Plan your steps and think like a strategist.
 print("Azeem X") 
 print("Code, glitch, grow.")
@@ -18,9 +18,9 @@ print("Code, glitch, grow.")
 # Get ready to learn Python fundamentals and object-oriented programming!
 # Best of luck, and have fun buddy! 
 
-# ==========================================================
+# ============================azeem=========================
 # PHASE 1 — VARIABLES
-# ==========================================================
+# ============================azeem=========================
 
 # Challenge 1
 # Create variables for:
@@ -86,9 +86,9 @@ if player_gold > 100 :
 else: 
      print("Poor Player plz topup")
 
-# ==========================================================
+# ============================azeem=========================
 # PHASE 2 — IF STATEMENTS
-# ==========================================================
+# ============================azeem=========================
 
 # Challenge 6
 # If player_health is 0 or below:
@@ -155,12 +155,11 @@ elif x=="b":
 elif x=="c":
      print("You Selected Hard Level.")
 
-# =================================azeem=========================
+# ============================azeem=========================
 # PHASE 3 — LOOPS
-# ==========================================================
+# ============================azeem=========================
 
-# Challenge 10
-# Print numbers 1 to 10 using a for loop.
+# Challenge 10: Print numbers 1 to 10 using a for loop.
 print("Print numbers 1 to 10 using a for loop.")
 for i in range (1, 11):
    print(i)
@@ -243,9 +242,9 @@ else:
 
 
 
-# ==========================================================
+# ============================azeem=========================
 # PHASE 4 — FUNCTIONS
-# ==========================================================
+# ============================azeem=========================
 
 # Challenge 16
 # Create a function:
@@ -318,9 +317,9 @@ print("Now, player level is:", level_up())
 # def repeated():
 
 
-# ==========================================================
+# ============================azeem=========================
 # PHASE 5 — LISTS
-# ==========================================================
+# ============================azeem=========================
 
 # Challenge 22
 # Create an inventory list.
@@ -398,9 +397,9 @@ else:
  print(x,"total maximum number of items achieved.")
 
 
-# ==========================================================
+# ============================azeem=========================
 # PHASE 6 — DICTIONARIES
-# ==========================================================
+# ============================azeem=========================
 
 # Challenge 27
 # Store player stats inside a dictionary.
@@ -521,9 +520,9 @@ if name_found == False :
         
 
 
-# ==========================================================
+# ============================azeem=========================
 # PHASE 7 — CLASSES
-# ==========================================================
+# ============================azeem=========================
 
 # Challenge 31
 # Create a Player class.
@@ -683,9 +682,9 @@ Fight.stop()
 # Player levels up after enough XP.
 # ...........................i implemented this in test.py file, please check it out.
 
-# ==========================================================
+# ============================azeem=========================
 # PHASE 8 — ADVANCED CLASSES
-# ==========================================================
+# ============================azeem=========================
 
 # Challenge 37
 # Create a Weapon class.
@@ -731,9 +730,9 @@ Fight.stop()
 # > i was not avalible in previous days; now starting where i left... 
 # 7th August,2026
 
-# ==========================================================
+# ============================azeem=========================
 # PHASE 9 — GAME WORLD
-# ==========================================================
+# ============================azeem=========================
 
 # Challenge 42
 # Create multiple locations.
@@ -764,9 +763,9 @@ Fight.stop()
 
 # >>> Alhumdullilah, Date: 10 Aug 2026.......................................
 
-# ==========================================================
+# ============================azeem=========================
 # PHASE 10 — POLISH
-# ==========================================================
+# ============================azeem=========================
 
 # Challenge 48
 # Create a game menu.
@@ -808,6 +807,7 @@ Fight.stop()
 
 # Challenge 54
 # Make the code readable:
+
 #
 # - remove duplicated code
 # - rename bad variable names
@@ -815,9 +815,9 @@ Fight.stop()
 # - organize functions
 
 
-# ==========================================================
+# ============================azeem=========================
 # FINAL BOSS CHALLENGE
-# ==========================================================
+# ============================azeem=========================
 
 # Without looking at previous solutions, rebuild the entire
 # game from scratch.
